@@ -52,6 +52,15 @@ main {
     width: 67.5%;
     height: 80%;
 }
+
+.project-card__in-focus-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/img/project-mi-blog.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 /* +++ MAIN | End +++ */
 
 /* +++ FOOTER | Start +++ */
