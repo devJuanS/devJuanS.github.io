@@ -37,8 +37,20 @@ header span {
 main {
     width: 100%;
     height: calc(100vh - 88px);
+}
+
+.projects {
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.project-card {
+    position: relative;
+    width: 67.5%;
+    height: 80%;
 }
 /* +++ MAIN | End +++ */
 
