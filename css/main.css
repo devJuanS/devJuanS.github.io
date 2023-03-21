@@ -59,6 +59,7 @@ header span {
     position: relative;
     min-width: 216px;
     width: 216px;
+    max-height: 384px;
     height: 80%;
     margin: 0 12px;
     scroll-snap-align: center;
@@ -88,6 +89,7 @@ header span {
 .project-card__img--url-2 {
     background-image: url('../assets/img/project-pokedex.png');
 }
+
 .project-card__img--url-3 {
     background-image: url('../assets/img/project-testimonials-grid.svg');
 }
@@ -112,3 +114,33 @@ footer p {
     opacity: 60%;
 }
 /* +++ FOOTER | End +++ */
+
+@media (min-width: 800px) {
+    .projects {
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 67.5%;
+        max-height: 80%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .projects__scroll {
+        /* Visualization styles */
+        overflow-x: hidden;
+    }
+
+    .project-card__img--url-1 {
+        background-image: url('../assets/img/project-mi-blog_large.png');
+    }
+
+    .project-card__img--url-2 {
+        background-image: url('../assets/img/project-pokedex_large.png');
+    } 
+
+    .project-card__img--url-3 {
+        background-image: url('../assets/img/project-testimonials-grid_large.png');
+    }
+}
