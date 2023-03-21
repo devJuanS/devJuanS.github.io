@@ -34,32 +34,62 @@ header span {
 /* +++ HEADER | End +++ */
 
 /* +++ MAIN | Start +++ */
-main {
+.projects-main {
     width: 100%;
     height: calc(100vh - 88px);
 }
 
 .projects {
+    position: relative;
     width: 100%;
     height: 100%;
+    padding: 0 40px;
     display: flex;
-    justify-content: center;
     align-items: center;
+}
+
+.projects__scroll {
+    /* Visualization styles */
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
 }
 
 .project-card {
     position: relative;
-    width: 67.5%;
+    min-width: 216px;
+    width: 216px;
     height: 80%;
+    margin: 0 12px;
+    scroll-snap-align: center;
 }
 
-.project-card__in-focus-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('../assets/img/project-mi-blog.svg');
+
+.project-card__img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.project-card__img-in-focus {
+    width: 100%;
+    height: 100%;
+}
+
+.project-card__img-out-focus {
+    width: 100%;
+    height: 100%;
+}
+
+.project-card__img--url-1 {
+    background-image: url('../assets/img/project-mi-blog.png');
+}
+
+.project-card__img--url-2 {
+    background-image: url('../assets/img/project-pokedex.png');
+}
+.project-card__img--url-3 {
+    background-image: url('../assets/img/project-testimonials-grid.svg');
 }
 /* +++ MAIN | End +++ */
 
