@@ -10,31 +10,46 @@
   /* font-family: ; */
   font-size: 62.5%;
   /* Colors */
-  --primary-color:   #202020;
-  --secondary-color: #b0b0b0;
-  --font-color:      #3d3d3d;
-  --bg-color:        #fff;
-  --heading-color:   #4f4f4f;
-}
+  --primary-color:     #202020;
+  --secondary-color:   #b0b0b0;
+  --font-color:        #3d3d3d;
+  --bg-color:          #fff;
+  --heading-color:     #4f4f4f;
+  --interactive-color: #7916a7;
 
-[data-theme="dark"] {
+  /* theme switch */
+  --darkmode: 0;
+  container-name: root;
+  container-type: normal;
+}
+:root:has(#checkbox:checked) { --darkmode: 1; }
+
+/* [data-theme="dark"] {
   --primary-color:   #f6f6f6;
   --secondary-color: #d1d1d1;
   --font-color:      #fff;
   --bg-color:        #000;
   --heading-color:   #e7e7e7;
-}
+} */
 
 body {
   font-size: 1.6rem;
   color: var(--font-color);
   background-color: var(--bg-color);
+  color-scheme: light dark;  /* telling the browser the document accept light and dark*/
+}
+
+@container root style(--darkmode: 1) {
+  body {
+    --bg-color:          #333;
+    --font-color:        #fff;
+    --interactive-color: #8ed28e;
+  }
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--interactive-color);
 }
-
 
 
 
@@ -49,40 +64,40 @@ a {
   }
 }
 .theme-switch {
+  position: relative;
   display: inline-block;
   height: 34px;
-  position: relative;
   width: 60px;
 }
 
 .theme-switch input {
-  display:none;
+  display: none;
 }
 
 .slider {
-  background-color: #ccc;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  cursor: pointer;
   transition: .4s;
 }
 
 .slider:before {
-  background-color: #fff;
-  bottom: 4px;
   content: "";
-  height: 26px;
-  left: 4px;
   position: absolute;
-  transition: .4s;
+  bottom: 4px;
+  left: 4px;
+  height: 26px;
   width: 26px;
+  background-color: #fff;
+  transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #66bb6a;
+  background-color: #6cc470;
 }
 
 input:checked + .slider:before {
