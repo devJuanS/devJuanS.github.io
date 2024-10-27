@@ -7,42 +7,43 @@
 }
 
 :root {
-  /* font-family: ; */
+  font-family: "Livvic", sans-serif;
   font-size: 62.5%;
   /* Colors */
-  --primary-color:     #202020;
-  --secondary-color:   #b0b0b0;
-  --font-color:        #3d3d3d;
-  --bg-color:          #fff;
-  --heading-color:     #4f4f4f;
-  --interactive-color: #7916a7;
+  --text-color:        #333;
+  --bg-color:          #ececec;
+  --primary-color:     #235789;
+  --secondary-color:   #6e98cf;
+  --accent-color:      #2d7ffb;
+  --interactive-color: #90c;
+  --headline-color:    #fd7;
 
-  /* theme switch */
+  /* Theme switch */
   --darkmode: 0;
   container-name: root;
   container-type: normal;
 }
-:root:has(#checkbox:checked) { --darkmode: 1; }
-
-/* [data-theme="dark"] {
-  --primary-color:   #f6f6f6;
-  --secondary-color: #d1d1d1;
-  --font-color:      #fff;
-  --bg-color:        #000;
-  --heading-color:   #e7e7e7;
-} */
+:root:has(#colorSchemeId:checked) { --darkmode: 1; }
 
 body {
   font-size: 1.6rem;
-  color: var(--font-color);
+  color: var(--text-color);
   background-color: var(--bg-color);
   color-scheme: light dark;  /* telling the browser the document accept light and dark*/
 }
 
 @container root style(--darkmode: 1) {
   body {
+    --text-color:        #ccc;
+    --bg-color:          #202020;
+    --primary-color:     #75aadb;
+    --secondary-color:   #305a91;
+    --accent-color:      #0457d2;
+    --interactive-color: #8ed28e;
+    --headline-color:    #7916A7;
+
     --bg-color:          #333;
-    --font-color:        #fff;
+    --text-color:        #fff;
     --interactive-color: #8ed28e;
   }
 }

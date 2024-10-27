@@ -1,32 +1,19 @@
+const CHECKBOX_CHECKED = 1;
+const CHECKBOX_UNCHECKED = 0;
 
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const colorSchemeSwitch = document.getElementById('colorSchemeId');
 
-/**
- * Handle accordingly the check/uncheck event of toggle-switch for dark/light mode
- * @param {EventListener} e 
- */
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
+colorSchemeSwitch.addEventListener('change', e => {
+  localStorage.setItem('color-scheme', e.target.checked ? CHECKBOX_CHECKED : CHECKBOX_UNCHECKED )
+  const scheme = localStorage.getItem('color-scheme') || 'auto';
+  document.documentElement.style.setProperty('--darkmode', scheme);
+});
 
+window.addEventListener('load', e => {
+  const scheme = localStorage.getItem('color-scheme') || 'auto';
+
+  if ( scheme !== 'auto' ) {
+    document.documentElement.style.setProperty('--darkmode', scheme);
+    colorSchemeSwitch.checked = +scheme ? CHECKBOX_CHECKED : CHECKBOX_UNCHECKED;
   }
-  else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-  }    
-}
-
-toggleSwitch.addEventListener('change', switchTheme, false);
-
-
-/* Check for saved user preference, if any, on load of the website */
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-if (currentTheme) {
-  document.documentElement.setAttribute('data-theme', currentTheme);
-
-  if (currentTheme === 'dark') {
-    toggleSwitch.checked = true;
-  }
-}
+});
