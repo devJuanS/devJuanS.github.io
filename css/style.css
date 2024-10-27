@@ -41,10 +41,6 @@ body {
     --accent-color:      #0457d2;
     --interactive-color: #8ed28e;
     --headline-color:    #7916A7;
-
-    --bg-color:          #333;
-    --text-color:        #fff;
-    --interactive-color: #8ed28e;
   }
 }
 
@@ -52,10 +48,57 @@ a {
   color: var(--interactive-color);
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  padding-block-start: 32px;
+  padding-inline: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 12px;
+  font-weight: 700;
+}
+.logo:before {
+  content: '';
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  background-image: url('/assets/icon/favicon.ico');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-inline-end: 8px;
+}
+
+.nav-bar {
+  width: 100%;
+  margin-block-end: 8px;
+}
+
+.nav-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+}
 
 /* Style for the theme toggle switch */
 .theme-switch-wrapper {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   display: flex;
   align-items: center;
 
@@ -111,4 +154,35 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media (width > 525px) {
+  .header {
+    padding-block-start: 8px;
+    flex-direction: row;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-menu {
+    margin-inline-end: 1.2rem;
+    justify-content: flex-end;
+    column-gap: 1.2rem;
+  }
+
+  .theme-switch-wrapper {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (width > 1024px) {
+  body {
+    width: 1024px;
+    margin: 0 auto;
+  }
 }
