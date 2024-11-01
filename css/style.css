@@ -42,6 +42,10 @@ body {
     --interactive-color: #8ed28e;
     --headline-color:    #7916A7;
   }
+
+  .level-skill {
+    background-color: #75aadb;
+  }
 }
 
 a {
@@ -158,9 +162,13 @@ input:checked + .slider:before {
 
 .main {
   padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heading {
+  width: 100%;
   margin-block: 3.2rem;
   text-align: center;
 }
@@ -176,12 +184,15 @@ input:checked + .slider:before {
 }
 
 .presentation h2 {
-  margin-block-end: 1.2rem;
-  font-size: 2.0rem;
+  margin-block-end: 2.4rem;
+  font-size: 2.4rem;
 }
 
-.aside-skills {
-  max-width: 360px;
+.skills-wrapper {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .aside-skills h3 {
@@ -198,8 +209,7 @@ input:checked + .slider:before {
 }
 
 .skill-card {
-  max-width: 280px;
-  width: 100%;
+  width: 280px;
   margin-block: 8px;
   display: flex;
 }
@@ -236,18 +246,27 @@ input:checked + .slider:before {
 .level-skill {
   width: 100%;
   height: 24px;
-  background-color: #ddd;
+  background-color: #ccc;
   border-radius: 12px;
+}
+
+@container root style(--darkmode: 1) {
+  .level-skill { background-color: #75aadb  }
 }
 
 .level-progress {
   height: 100%;
-  width: 60%;
+  width: 40%;
   border-radius: 12px;
   background: var(--accent-color);
   background: linear-gradient(270deg, var(--accent-color), var(--secondary-color));
   opacity: 1;
   transition: 1s ease 0.3s;
+}
+.level-progress:before {
+  content: 'Beginner';
+  padding-inline-start: .8rem;
+  font-size: 1.4rem;
 }
 
 @media (width > 525px) {
@@ -272,6 +291,39 @@ input:checked + .slider:before {
     top: 0;
     right: 0;
   }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.2rem;
+}
+
+.footer__author {
+  text-align: center;
+}
+
+.icon-flag {
+  width: 1.6rem;
+  height: 1.6rem;
+  /* vertical-align: -20%; */
+}
+
+.footer .social-net a {
+  color: var(--text-color);
+  font-size: 2rem;
+}
+
+@media (width > 768px) {
+  .content-wrapper {
+    max-width: 760px;
+    width: 100%;
+    margin-block: 32px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .aside-skills { align-items: normal;}
 }
 
 @media (width > 1024px) {
