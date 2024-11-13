@@ -55,20 +55,17 @@ a {
 .header {
   position: sticky;
   top: 0;
-  padding-block-start: 32px;
+  padding-block-start: 8px;
   padding-inline: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: var(--bg-color);
 }
 
 .logo {
   display: flex;
-  justify-content: center;
+  align-self: flex-start;
   align-items: center;
-  margin-block-end: 12px;
   font-weight: 700;
 }
 .logo:before {
@@ -101,7 +98,7 @@ a {
 /* Style for the theme toggle switch */
 .theme-switch-wrapper {
   position: absolute;
-  top: 8px;
+  top: 24px;
   right: 8px;
   display: flex;
   align-items: center;
@@ -111,6 +108,7 @@ a {
     font-size: 1rem;
   }
 }
+
 .theme-switch {
   position: relative;
   display: inline-block;
@@ -270,10 +268,7 @@ input:checked + .slider:before {
 }
 
 @media (width > 525px) {
-  .header {
-    padding-block-start: 8px;
-    flex-direction: row;
-  }
+  .header { flex-direction: row }
 
   .nav-bar {
     display: flex;
@@ -293,28 +288,28 @@ input:checked + .slider:before {
   }
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  column-gap: 1.2rem;
-}
-
-.footer__author {
+.site-footer {
+  margin-block-start: 1.2rem;
+  margin-block-end: .8rem;
   text-align: center;
+  font-size: 1rem;
 }
 
 .icon-flag {
   width: 1.6rem;
   height: 1.6rem;
-  /* vertical-align: -20%; */
-}
-
-.footer .social-net a {
-  color: var(--text-color);
-  font-size: 2rem;
+  vertical-align: -40%;
 }
 
 @media (width > 768px) {
+  .main {
+    margin-block-start: 5vh;
+  }
+
+  .heading {
+    margin-block-end: 5vh;
+  }
+
   .content-wrapper {
     max-width: 760px;
     width: 100%;
